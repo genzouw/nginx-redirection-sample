@@ -1,0 +1,10 @@
+version: "3"
+services:
+  http:
+    image: nginx
+    ports:
+      - 80:80
+      - 82:82 # リダイレクト先のポート ( 一般的には 443 )
+    volumes:
+      - ./html:/usr/share/nginx/html
+      - ./templates:/etc/nginx/templates
